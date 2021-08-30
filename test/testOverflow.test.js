@@ -1,12 +1,10 @@
 const VerySimple = artifacts.require("VerySimple");
 const BN = web3.utils.BN;
-const isBN = web3.utils.isBN;
 const { expectRevert } = require('@openzeppelin/test-helpers');
 
 contract("VerySimple", (accounts)=>{
   
   before(async ()=>{
-    console.log(isBN(minValue));
     maxAboutToOverflowContract = await VerySimple.new((new BN(2)).pow(new BN(255)).sub(new BN(1)));
     // minAboutToOverflowContract = await VerySimple.new((new BN(-2).pow(new BN(255)).sub(new BN(1))));
   });
